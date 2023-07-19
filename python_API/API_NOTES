@@ -1,0 +1,55 @@
+api - application programming interface
+they take requests from a user and send them to a service provider and are also responsible
+    for taking the response from the service provider back to the user.
+
+THE FOLLOWING ARE THE STEPS FOLLWOED IN THE WORKING OF api
+    the client initiates the requests via the API url
+    the api makes a call to the server after receiving the requests
+    then the server sends the response back to the api with the information
+    Finally the API transfers the data to the client
+
+API's include authrization credentials and an API gateway to limit access so as to minimize
+    security threats.
+
+    For additional security layers to the data, HTTP headers, query string parameters or
+    cookies are used.
+
+DIFFERENCE BETWEEN AN API AND A WEB application
+
+an api is an interface that allows the communication of two programs
+ while a web application is anetwork based resource responsible for compliting a single task
+ also all web services are API's but not all API's are web services.
+
+there are alot of API'S BUT WILL DISCUSS REST API's FOR NOW
+
+REST APIs
+they define a set of functions GET, POST, PUT, DELETE that clients use to access   server  data
+
+    get - retrieves a record
+    put - updates a record
+    post - creates a record
+    delete - deletes a record
+
+they are stateless, meaning that servers do not save clients data between requests.
+All requests done vis REST API  use only HTTP request.
+
+WORKING:
+        a request is sent from the a client to a server in the form of a URL as either a
+        a http get, post, put, delete request.
+        A response comes back from the server in the form of a resource and can be anything
+             from a html, xml, image or THE MOST POPULAR FORMAT being used in the web services
+             JSON.
+
+
+REQUEST AND RESPONSE examples
+
+REQUEST - requests for all students in the geeks for geeks api
+        GET:/api/students
+
+        POST:/api/students - creating and inserting data
+            {"name":"raj"}
+
+        PUT:/api/students/1 - requesting to update data id = 1
+            {"name":"Raj"}
+
+        DELETE:/api/students/1 - request for deleting data of id = 1

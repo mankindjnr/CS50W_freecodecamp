@@ -1,0 +1,19 @@
+/*all variables start with a dollar sign*/
+/*unlike css, scss allows the creation of variables to prevent redundancy in html*/
+/*scss is not understood by default by web browsers, so, you'll have to install scss software
+on pc to compile scss to used css*/
+/*after installation run it this way
+sass filename.scss:filename.css
+*/
+/*creates a variable color with the variable red*/
+ul {
+  font-size: 14px;
+  color: purple;
+}
+
+ol {
+  font-size: 18px;
+  color: purple;
+}
+
+/*# sourceMappingURL=variable.css.map */

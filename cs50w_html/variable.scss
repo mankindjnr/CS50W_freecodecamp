@@ -1,0 +1,63 @@
+/*all variables start with a dollar sign*/
+/*unlike css, scss allows the creation of variables to prevent redundancy in html*/
+/*scss is not understood by default by web browsers, so, you'll have to install scss software
+on pc to compile scss to used css*/
+
+/*after installation run it this way
+sass filename.scss:filename.css
+*/
+
+/*to automate the complation
+sass --watch variables.scss:variable.css
+*/
+
+$color: purple; /*creates a variable color with the variable red*/
+
+/*you can also nest elements*/
+/*below, the nested div style, any paragraph in that div will turn blue
+all fonts only in that div will be 18px
+and the ul lists in the div will be green
+*/
+div {
+    font-size: 18px;
+
+    p {
+        color: blue;
+    }
+
+    ul {
+        color: green;
+    }
+}
+
+/*ineritance*/
+%message {
+    font-family: sans-serif;
+    font-weight: 18px;
+    margin: 20px;
+    width: 20px;
+}
+
+/*success will now inherit all the styling of message since it extends message*/
+.success {
+    @extend %message;
+    background-color: green;
+}
+
+.warning {
+    @extend %message;
+    background-color: red;
+}
+
+
+
+
+ul {
+    font-size: 14px;
+    color: $color;
+}
+
+ol {
+    font-size: 18px;
+    color: $color;
+}
