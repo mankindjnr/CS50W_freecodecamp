@@ -59,3 +59,4 @@ urlpatterns = [
 ## CURRENT LIST OF APPS CREATED
 - hello
 - newyear
+- tasks
