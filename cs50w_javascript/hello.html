@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('form').onsubmit = () => {
+                const name = document.querySelector('#name').value;
+                alert(`Hello, ${name}!`);
+            };
+        });
+    </script>
+</head>
+<body>
+        <h1>hello</h1>
+        <form>
+            <input autofocus type="text" id="name" placeholder="Enter your name">
+            <input type="submit" value="Submit" onclick="hello(); return false"> <!-- return false prevents the page from reloading when the button is clicked. -->
+        </form>
+</body>
+</html>
