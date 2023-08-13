@@ -1,0 +1,80 @@
+body, html {
+    background: #35363A;
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+form {
+    display: inline-block;
+}
+
+
+#bar {
+    width: 600px;
+    height: 35px;
+    border : 2px solid #35363A;
+    border-radius: 50px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+#input {
+    width: 600px;
+    height: 35px;
+    border : 2px solid #35363A;
+    padding: 8px;
+    font-size: 16px;
+}
+
+#label {
+    font-size: 20px;
+    color: #e8eaf1;
+    font-family: "Product Sans", Arial, sans-serif;
+    margin-right: 50px;
+    width: 200px;
+}
+
+#search_button {
+    margin-left: 200px;
+    display: block;
+    margin-top: 10px;
+    border-radius: 50px;
+    padding: 8px;
+    width: 200px;
+    font-size: 20px;
+}
+
+#header {
+    font-size: 60px;
+    color: #e8eaf1;
+    font-family: "Product Sans", Arial, sans-serif;
+    margin-left: 200px;
+    display: block;
+    margin-top: 10px;
+}
+
+.page-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional hover effect */
+.page-button:hover {
+    background-color: #0056b3;
+}

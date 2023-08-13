@@ -1,0 +1,32 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+{% block title %}new entry{% endblock %}
+
+{% block body %}
+<h1>Updating {{title}}</h1>
+<div>
+    {% if update %}
+        <div class="alert alert-success" role="alert">
+            you are updating the page!
+        </div>
+    {% endif %}
+</div>
+<div>
+    <form action="{% url 'update_page' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group hidden">
+            <label type="hidden" for="{{ form.title.id_for_label }}"></label>
+            <input type="hidden" name="{{ form.title.name }}" class="form-control" id="{{ form.title.auto_id }}" value="{{title}}" placeholder="Enter title">
+            {{ form.title.errors }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.content.id_for_label }}">Content</label>
+            <textarea name="{{ form.content.name }}" class="form-control" id="{{ form.content.auto_id }}" rows="5">{{ content }}</textarea>
+            {{ form.content.errors }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+{% endblock %}
