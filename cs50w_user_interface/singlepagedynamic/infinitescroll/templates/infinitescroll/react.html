@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--script tags for react-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <!--react-dom for productio-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.1.0/react-dom.min.js"></script>
+    <!--babel for react-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react basics</title>
+</head>
+<body>
+    <div id="app"></div>
+
+        <!--jsx for react-->
+    <script type="text/babel">
+        function Hello(props) {
+            return <h1>hello, {props.name}!</h1>;
+        }
+
+        function App() {
+            const x = 5;
+            const y = 6;
+
+            return (
+                <div>
+                    <Hello name="Kikie" />
+                    <Hello name="localman" />
+                    <Hello name="mitch" />
+                    <p>{ x + y }</p>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('app'));
+    </script>
+</body>
+</html>

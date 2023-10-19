@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single page</title>
+
+    <script>
+        // retrieving data from the server as defined in the routes.py file section function
+        //this way, in a larger web page, we can load information dynamically at a specific point in the page
+        //without having to reload the entire page (asyncronously js)
+        //this method does not update the url, so the back button will not work
+
+        function showSection(section) {
+            fetch(`/sections/${section}`)
+            .then(response => response.text())
+            .then(text => {
+                console.log(text);
+                document.querySelector('#content').innerHTML = text;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('button').forEach(button => {
+                button.onclick = () => {
+                    showSection(button.dataset.section);
+                };
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Default page</h1>
+    <button data-section="1">section 1</button>
+    <button data-section="2">section 2</button>
+    <button data-section="3">section 3</button>
+
+    <div id="content">
+    </div>
+
+</body>
+</html>

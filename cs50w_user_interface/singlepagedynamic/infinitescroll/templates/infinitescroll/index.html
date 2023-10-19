@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>infinite scroll</title>
+    <script>
+        // start witht the first post
+        // it also serves as a counter for the next posts
+        let counter = 1;
+
+        // load posts 20 at a time
+        const quantity = 50;
+
+        // when DOM loads, render the first 20 posts
+        document.addEventListener('DOMContentLoaded', load);
+
+        window.onscroll = () => {
+            // if scrolled to bottom, load the next 20 posts
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                load();
+            }
+        };
+
+        // if scrolled to bottom, load the next 20 posts
+        function load() {
+            const start = counter;
+            const end = start + quantity  - 1;
+            counter = end + 1;
+
+            // get new posts and add posts
+            fetch(`/infinite/posts?start=${start}&end=${end}`)
+            .then(response => response.json())
+            .then(data => {
+                data.posts.forEach(add_post);
+            });
+        };
+
+        // add a new post with given contents to DOM
+        function add_post(contents) {
+            // create new post
+            const post = document.createElement('div');
+            post.className = 'post';
+            post.innerHTML = contents;
+
+            // add post to DOM
+            document.querySelector('#posts').append(post);
+        };
+    </script>
+</head>
+<body>
+    <h1>infinite scroll</h1>
+    <div id="posts">
+
+    </div>
+</body>
+</html>
